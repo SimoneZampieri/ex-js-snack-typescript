@@ -11,6 +11,14 @@ if(typeof valoreRicevuto === 'string'){
     } else {
         console.log('NO')
     }
-} else{
+}else if(Array.isArray(valoreRicevuto)){
+    console.log(valoreRicevuto.length)
+}else if(valoreRicevuto === null){
+    console.log('valore non supportato')
+} else if(valoreRicevuto instanceof Promise){
+    valoreRicevuto.then(result => {
+        console.log(result)
+    })
+}else{
     console.log('tipo non supportato')
 }
